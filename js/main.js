@@ -6,15 +6,16 @@ $(document).ready(function () {
 
     // modal
 
-// Open modal (assumes each button targets a modal via data attribute)
 $('.open-modal-btn').on('click', function () {
   const target = $(this).data('target'); // e.g., "modal1"
-  $('#' + target).addClass('active'); // e.g., <div id="modal1" class="modal-bg">
+  $('#' + target).addClass('active');
+  $('body').addClass('no-scroll'); // 🔒 Disable background scroll
 });
 
 // Close modal
 $('.close-modal').on('click', function () {
   $(this).closest('.modal-bg').removeClass('active');
+  $('body').removeClass('no-scroll'); // 🔓 Re-enable background scroll
 });
 
 
