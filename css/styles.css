@@ -1,0 +1,344 @@
+*{
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
+header {
+    background: #1a1e24;
+    height: 75px;
+}
+
+input,
+select {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    color: grey;
+}
+
+input[type="radio"] {
+    width: 25px;
+    height: 25px;
+
+}
+
+.etat label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white !important;
+    width: 100%;
+}
+
+.headerWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    width: 140px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.fixHeight {
+    height: 100% !important;
+}
+
+.settings i {
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative
+}
+
+.settings ul {
+    position: absolute;
+    background: #1a1e24;
+    color: white;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    left: -90px;
+    top: 52px;
+}
+
+.settings ul li:hover {
+    color: orange
+}
+
+.settings ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/*******************************************************************/
+.accordion {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid #f7943d;
+}
+
+    .accordion-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: linear-gradient(135deg, #1c1c1c, #252525);
+      transition: background 0.4s ease;
+    }
+
+    .accordion-header {
+      padding: 20px;
+      cursor: pointer;
+      position: relative;
+        font-size: 20px;
+    letter-spacing: 1px;
+    }
+
+    .accordion-header::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      top: 12px;
+      font-size: 1.5em;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-item.active .accordion-header::after {
+      transform: rotate(45deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 20px;
+      background: #181818;
+      color: #ccc;
+      transition: height 0.6s ease, padding 0.3s ease;
+    }
+
+    .accordion-item.active .accordion-content {
+        max-height: fit-content;
+      padding: 20px;
+    }
+
+    /* Glowing border effect */
+.accordion-item.active {
+  background: linear-gradient(135deg, #1f1f1f, #292929);
+  box-shadow: inset 0 0 12px #f7943d44, 0 0 12px #f7943d44;
+}
+
+
+/******************************************************************/
+main,
+body {
+    background: #24282d;
+    height: 100%;
+    width: 100%;
+}
+
+.fieldsetList {
+    height: 100%;
+    margin: 35px 20px;
+    padding: 20px 25px 25px 25px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 80px;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+}
+
+fieldset {
+    background: #1a1e24;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #4a4a4a;
+    padding: 20px;
+    flex: 0 0 calc(33.33% - 16px);
+}
+
+@media (max-width: 1400px) {
+
+    fieldset {
+        flex: 0 0 calc(50% - 16px) !important;
+    }
+
+}
+
+@media (max-width: 992px) {
+
+    fieldset {
+        flex: 0 0 calc(100%) !important;
+    }
+
+}
+
+legend {
+    width: auto;
+    padding: 0px 15px;
+    margin-left: 35px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 999;
+}
+
+.modal-bg.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 30px;
+    width: auto;
+    color: #fff;
+    opacity: 0;
+    transition: all 0.4s ease;
+    display: block !important;
+    height: fit-content !important;
+}
+
+.modal-bg.active .modal {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.close-modal {
+    position: absolute;
+    top: -3px;
+    right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #eee;
+    transition: 0.2s;
+}
+
+.close-modal:hover {
+    color: #ff6b81;
+}
+
+.open-modal-btn {
+    padding: 7px 20px;
+    background: transparent;
+    border: 1px solid #444;
+    color: #eee;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    margin-bottom: 10px;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+
+.open-modal-btn:hover {
+    border-color: #F7943D;
+    color: #F7943D;
+    background: rgba(255, 79, 129, 0.05);
+    box-shadow: 0 0 10px #F7943D;
+}
+
+/*******************************************************************/
+.inputStyle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+.fournisseur,
+.famille,
+.client,
+.date,
+.timeWrapper,
+.etat,
+.lastDiv {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.btnPrintWrapper {
+    text-align: right;
+}
+
+button.print {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: #F7943D;
+    color: white;
+    text-align: right;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.dossierWrapper {
+    width: 48%;
+    text-align: left;
+}
+
+p.warning {
+    margin: 0px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 13px;
+    color: red;
+}
+
+
+/********************** Media Query Start **************************/
+
+@media (min-width: 1201px) {}
+
+@media (min-width: 1025px) and (max-width: 1200px) {}
+
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+@media (min-width: 481px) and (max-width: 768px) {}
+
+@media (min-width: 320px) and (max-width: 480px) {}

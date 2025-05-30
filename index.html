@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Capram - Reporting</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
+    <!-- css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- font - fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="container-fluid fixHeight">
+            <div class="headerWrapper">
+                <div class="logo">
+                    <img src="images/capram.png" alt="logo">
+                </div>
+                <div class="settings">
+                    <i class="fa-solid fa-bars"></i>
+                    <ul style="display: none;">
+                        <li>Déconexion</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fieldset modal start -->
+    <div id="modal1" class="modal-bg">
+        <div class="modal">
+            <span class="close-modal">&times;</span>
+            <form action="">
+                <div class="fournisseur">
+                    <div class="fourniFin inputStyle">
+                        <label for="fournisseur-choice">Fournisseur Début</label>
+                        <input list="fournisseur-list-1" id="fournisseur-choice-1" name="fournisseur-choice-1" placeholder="Choisir une option" />
+                        <datalist id="fournisseur-list-1">
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="4"></option>
+                        </datalist>
+                        <p class="warning" style="display: none;">Vous devez remplir ce champ !</p>
+                    </div>
+                    <div class="fourniDebut inputStyle">
+                        <label for="fournisseur-choice-2">Fournisseur Fin</label>
+                        <input list="fournisseur-list-2" id="fournisseur-choice-2" name="fournisseur-choice-2" placeholder="Choisir une option" />
+                        <datalist id="fournisseur-list-2">
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="4"></option>
+                        </datalist>
+                        <p class="warning" style="display: none;">Vous devez remplir ce champ !</p>
+                    </div>
+                </div>
+                <div class="famille">
+                    <div class="familleFin inputStyle">
+                        <label for="famille-choice">Famille Début</label>
+                        <input list="famille-list-1" id="famille-choice-1" name="famille-choice-1" placeholder="Choisir une option" />
+                        <datalist id="famille-list-1">
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="4"></option>
+                        </datalist>
+                        <p class="warning" style="display: none;">Vous devez remplir ce champ !</p>
+                    </div>
+                    <div class="familleDebut inputStyle">
+                        <label for="famille-choice-2">Famille Fin</label>
+                        <input list="famille-list-2" id="famille-choice-2" name="famille-choice-2" placeholder="Choisir une option" />
+                        <datalist id="famille-list-2">
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="4"></option>
+                        </datalist>
+                        <p class="warning" style="display: none;">Vous devez remplir ce champ !</p>
+                    </div>
+                </div>
+                <div class="client">
+                    <div class="clientWrapper inputStyle">
+                        <label for="client-choice-1">Selectionnez un client</label>
+                        <input list="client-list-1" id="client-choice-1" name="client-choice-1" placeholder="Choisir une option" />
+                        <datalist id="client-list-1">
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="4"></option>
+                        </datalist>
+                        <p class="warning" style="display: none;">Vous devez remplir ce champ !</p>
+                    </div>
+                </div>
+                <div class="date">
+                    <div class="dateDebut inputStyle">
+                        <label for="dateStart">Date début</label>
+                        <input type="date" id="dateStart" name="dateStart">
+                        <p class="warning" style="display: none;">Vous devez remplir ce champ !</p>
+                    </div>
+                    <div class="dateFin inputStyle">
+                        <label for="dateFin">Date Fin</label>
+                        <input type="date" id="dateFin" name="dateFin">
+                        <p class="warning" style="display: none;">Vous devez remplir ce champ !</p>
+                    </div>
+
+                </div>
+                <div class="timeWrapper">
+                    <div class="dateTraitement inputStyle">
+                        <label for="dateStart">Date traitement</label>
+                        <input type="date" id="dateTraitementInput" name="dateStart">
+                        <p class="warning" style="display: none;">Vous devez remplir ce champ !</p>
+                    </div>
+                    <div class="yearSelect inputStyle">
+                        <label for="yearLabel">Année</label>
+                        <select name="yearLabel" id="" placeholder="Choisir une option">
+                            <option value="Choisir une option">Choisir une option</option>
+                        </select>
+                        <p class="warning" style="display: none;">Vous devez remplir ce champ !</p>
+                    </div>
+                </div>
+                <div class="etat">
+                    <label>
+                        <input type="radio" name="etatType" value="famille">
+                        <span class="custom-radio"></span>
+                        État / Famille
+                        <p class="warning" style="display: none;">Vous devez choisir soit État famille, soit fournisseur !</p>
+                    </label>
+                    <label>
+                        <input type="radio" name="etatType" value="fournisseur">
+                        <span class="custom-radio"></span>
+                        État / Fournisseur
+                    </label>
+
+                </div>
+                <div class="lastDiv">
+                    <div class="dossierWrapper">
+                        <label for="yearLabel">Dossier</label>
+                        <input type="text" placeholder="Entrez N° dossier">
+                    </div>
+                </div>
+
+                <div class="btnPrintWrapper">
+                    <button class="print"><i class="fa-solid fa-print"></i>&nbsp;<span>Imprimer</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Fieldset modal end -->
+
+    <main>
+        <div class="fieldsetList">
+            <fieldset>
+                <!-- Fieldset title -->
+                <legend>Chiffre d'affaire</legend>
+                <!-- Fieldset accordion start -->
+                <div class="accordion">
+                    <div class="accordion-item active">
+                        <div class="accordion-header">Chiffre d'Affaire</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;CA SAP</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;CA Agence Mensuel MREG</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;CA REP SAP</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;CA REP CLT SAP</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;CA CLT CARTE SAP</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;CA REPS PAR CARTE/MOIS</Button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Fieldset accordion end -->
+            </fieldset>
+            <fieldset>
+                <!-- Fieldset title -->
+                <legend>Gestion Encaissement</legend>
+                <!-- Fieldset accordion start -->
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etat des encaissements annuels</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Journal des encaissements</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Total</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Réglement</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Dépôt</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Représentant</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Encaissement avec CA 1</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Encaissement avec CA 2</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Encaissement avec CA 3</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Factures non réglées</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Total</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Représentant</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;028+029+030</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;021+023+005</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Edition des bordereaux</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Détaillé</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Cumul</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Mois</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etats des soldes</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Solde des représentants</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Solde des représentants détaillé</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Recap</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Edition des impayés</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Impayés</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Impayés non réglés</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Impayés non réglés recap</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Impayés par représentant</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etats des Echéances</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Global</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Recap</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Portefeuille</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Edition Relevé Client</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Relevé A</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Relevé B</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etats Soldes Transporteurs</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Recap</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Details</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Details sans zero</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Details paysage</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Details avancé</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etat Top Clients Par Représentant</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etats Des Commissions</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Recap</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Avec Conditions</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Journal Des Expéditions</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Expeditions non réglées</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Journal Des Ventes</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Représentant</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Mode Réglement</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Transporteur</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Jouranl des avoirs</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Escompte Règlements</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fieldset accordion end -->
+            </fieldset>
+            <fieldset>
+                <!-- Fieldset title -->
+                <legend>Gestion Import</legend>
+                <!-- Fieldset accordion start -->
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">Edition Dossier Importation</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Journal Des Achats Etrangers</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Journal Des Achats Locaux</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etat Préparatoire des Commandes</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher (12 mois)</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etat De Marge</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Recap</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Détaillé</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etat Des Tarifs</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Tarifs Image 1</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Tarifs Image 2</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Tarifs sans Image</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Impayés Excel</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etat Des Ecarts Des Inventaires</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Par Famille</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Par Fournisseur</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Par Famille (détails)</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Par Fournisseur (détails)</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etat Stock Par Fournisseur</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etat Des Reliquats Commandes Clients</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Recap</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etat De Marge Personnalisé</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Recap</Button>
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Détaillé</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etat Stock Par Famille</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etat Couverture De Stock Par Carte</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Etat Couverture De Stock Par Carte/Article</div>
+                        <div class="accordion-content">
+                            <Button class="open-modal-btn" data-target="modal1"><i class="fa-solid fa-print"></i>&nbsp;Afficher</Button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fieldset accordion end -->
+            </fieldset>
+
+
+        </div>
+    </main>
+
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
